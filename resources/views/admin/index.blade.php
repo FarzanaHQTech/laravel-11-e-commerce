@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div style="margin-top: 100px;">
+<div >
     <div class="main-content-inner">
 
         <div class="main-content-wrap">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AuthAdmin;
@@ -15,4 +16,9 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::middleware(['auth', AuthAdmin::class])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::resource('/admin/brands', BrandController::class)->names([
+        'index' => 'admin.brands',
+        'create' => 'admin.brands.create'
+
+    ]);
 });
